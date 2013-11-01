@@ -1105,7 +1105,7 @@ impl Window {
     /// Wrapper for `glfwGetInputMode` called with `CURSOR`.
     #[fixed_stack_segment] #[inline(never)]
     pub fn get_cursor_mode(&self) -> CursorMode {
-        unsafe { cast::transmute(ffi::glfwGetInputMode(self.ptr, ffi::CURSOR) as int) }
+        unsafe { cast::transmute(ffi::glfwGetInputMode(self.ptr, ffi::CURSOR) as i32) }
     }
 
     /// Wrapper for `glfwSetInputMode` called with `CURSOR`.
@@ -1141,13 +1141,13 @@ impl Window {
     /// Wrapper for `glfwGetKey`.
     #[fixed_stack_segment] #[inline(never)]
     pub fn get_key(&self, key: Key) -> Action {
-        unsafe { cast::transmute(ffi::glfwGetKey(self.ptr, key as c_int) as int) }
+        unsafe { cast::transmute(ffi::glfwGetKey(self.ptr, key as c_int) as i8) }
     }
 
     /// Wrapper for `glfwGetMouseButton`.
     #[fixed_stack_segment] #[inline(never)]
     pub fn get_mouse_button(&self, button: MouseButton) -> Action {
-        unsafe { cast::transmute(ffi::glfwGetMouseButton(self.ptr, button as c_int) as int) }
+        unsafe { cast::transmute(ffi::glfwGetMouseButton(self.ptr, button as c_int) as i8) }
     }
 
     /// Wrapper for `glfwGetCursorPos`.
