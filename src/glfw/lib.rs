@@ -19,6 +19,7 @@
        author = "Brendan Zabarauskas",
        url = "https://github.com/bjz/glfw3-rs")];
 
+#[pkgid = "github.com/bjz/glfw-rs"];
 #[comment = "Bindings and wrapper functions for glfw3."];
 #[crate_type = "lib"];
 
